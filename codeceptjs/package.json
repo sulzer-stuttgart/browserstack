@@ -1,0 +1,31 @@
+{
+  "name": "codeceptjs-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx codeceptjs run --steps",
+    "test:browserstack": "npx codeceptjs run --config ./browserstack.conf.js --steps --reporter mochawesome",
+    "test:allure": "npx codeceptjs run-workers --suites 5  --plugins allure",
+    "report": "allure serve ./allure-results",
+    "server:install": "node_modules/selenium-standalone/bin/selenium-standalone install",
+    "server:start": "node_modules/selenium-standalone/bin/selenium-standalone start"
+  },
+  "keywords": [],
+  "author": "Mustafa Masetic",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.0.0",
+    "cli-table": "^0.3.1",
+    "codeceptjs": "^2.6.5",
+    "mocha": "^7.2.0",
+    "mochawesome": "^6.1.1",
+    "webdriverio": "^5.23.0"
+  },
+  "dependencies": {
+    "@wdio/browserstack-service": "^6.1.15",
+    "mocha-allure-reporter": "^1.4.0",
+    "selenium-standalone": "^6.17.0"
+  }
+}
